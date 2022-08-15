@@ -18,3 +18,7 @@
 .messages .message {
     padding: 10px;
 }
+
+.dialogs a {
+    text-decoration: none;
+}
