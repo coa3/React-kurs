@@ -11,6 +11,30 @@
 // let a = [1,2,3];
 // let b = [4,5,6];
 // let c = [...a, ...b] это объединяет массивы [1, 2, 3, 4, 5, 6]
+// -----------------сделать все первые буквы главными
+let n6 = "How can mirrors be real if our eyes aren't real";
+
+function f19() {
+    let m = n.split(/\s+/).map(word => word[0].toUpperCase() + word.substring(1)).join(' ')
+        //n.split(' ');   ['How', 'can', 'mirrors', 'be', 'real', 'if', 'our', 'eyes', "aren't", 'real']
+        // (/\s+/)  \s - пробелы +  от еденицы и больше (от еденицы и больше это все что идет сразу после пробелов, как раз все первые буквы каждого слова!!!!)
+        // .map(word => word[0].toUpperCase() [0] преобразовать в верхний регистр
+        // .substring(1). substring()- возвращает подстроку строки между двумя индексами, или от одного индекса и до конца строки. от 1 индекса и до конца слова
+        // join(' ') - ставим пробел между словами
+}
+
+let n = 5248971;
+
+function f19() {
+    let r = n + ''; // преобразуем число в строку
+    let m = Array.from(r) // разбиваем каждый символ в отдельный элемнент и преобразуем в массив ['5', '2', '4', '8', '9', '7', '1']
+    let out = [];
+    for (let i = 0; i < m.length; i++) {
+        out.push(+m[i]); // каждый элемент массива переводим в число [5, 2, 4, 8, 9, 7, 1]
+    }
+    out.sort((a, b) => b - a) // сортируем по убыванию [9, 8, 7, 5, 4, 2, 1], a - b  сортировать по убыванию
+    let x = +out.join(""); // преобразовать массив чисел в одно число 987654321
+};
 let a22 = {
     c: 300,
     b: 200,
@@ -242,8 +266,11 @@ one.style.width = '150px'; //присвоение стиля элементу
 one.style.paddingBottom = '40px';
 // console.log(one.style);
 one.classList.add('two', 'three'); // add- присвоение и добавление класса
+one.appendChild(a) // добавить див
 one.classList.remove('three'); // remove-  удаление класса
 one.classList.toggle('three'); // toggle- переключатель
+one.before(a); // Созданный div добавляется перед другим дивом, а если after то после
+one.replaceWith(a); // заменяет существующий див на указанный вами, новый
 one.classList.contains('three'); //contains- проверка на наличие класса, если есь класс .three то true, 
 //если нет то false
 const toggle = document.querySelector('.toggle');
@@ -316,6 +343,19 @@ function f18() {
             max = ar18[i];
         }
     }
+}
+// минимал элемент массива
+
+function f19() {
+    let ar18 = [78, 8, 56, 232, 12, 22, 555];
+    let min = ar18[0];
+    for (let i = 0; i < ar18.length; i++) {
+        if (ar18[i] < min) {
+            min = ar18[i];
+
+        }
+    }
+    console.log(min); //  аналог ==     return Math.min(...args)
 }
 // Выведите в .out-19 индекс минимального элемента в массиве ar19
 let ar19 = [15, 424, 313, 78, 241, 4, 45, 67];
